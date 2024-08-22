@@ -40,9 +40,10 @@ public class Main {
         System.out.println("3. Borrow Book");
         System.out.println("4. Return Book");
         System.out.println("5. List Available Books");
-        System.out.println("6. Save Library Data");
-        System.out.println("7. Load Library Data");
-        System.out.println("8. Exit");
+        System.out.println("6. List Borrowed Books");
+        System.out.println("7. List All Books");
+        System.out.println("8. List All Members");
+        System.out.println("9. Exit");
         System.out.print("Choose an option: ");
     }
 
