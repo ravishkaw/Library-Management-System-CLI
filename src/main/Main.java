@@ -103,7 +103,6 @@ public class Main {
         String bookId = scanner.nextLine();
 
         library.borrowBook(memberId, bookId);
-
     }
 
     public static void returnBook() {
@@ -113,7 +112,6 @@ public class Main {
         String bookId = scanner.nextLine();
 
         library.returnBook(memberId, bookId);
-
     }
 
     public static void availableBooks() {
@@ -126,19 +124,19 @@ public class Main {
     public static void borrowedBooks() {
         System.out.println("Borrowed Books:");
         for (String memberBook : library.borrowedBooks().keySet()) {
-            System.out.println(memberBook + library.borrowedBooks().get(memberBook));
+            System.out.println("Member " + memberBook + " -: " + library.borrowedBooks().get(memberBook));
         }
     }
 
     public static void listBooks() {
-        System.out.println("Available Books:");
+        System.out.println("All Books:");
         for (Book book : library.getBookList()) {
             System.out.println(book);
         }
     }
 
     public static void listMembers() {
-        System.out.println("Available Books:");
+        System.out.println("All Members:");
         for (Member member : library.getMemberList()) {
             System.out.println(member);
         }
