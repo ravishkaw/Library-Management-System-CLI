@@ -1,11 +1,13 @@
 package main;
 
 import models.Book;
+import models.Member;
 import services.Library;
 
 import java.util.*;
 
 public class Main {
+    private static Library library = new Library();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -20,6 +22,9 @@ public class Main {
             switch (choice) {
                 case 1:
                     addBook();
+                    break;
+                case 2:
+                    addMember();
                     break;
 
             }
@@ -50,8 +55,22 @@ public class Main {
         String bookGenre = scanner.nextLine();
 
         Book book = new Book(bookId, bookTitle, bookAuthor, bookGenre);
+        library.addBook(book);
         System.out.println("Book added successfully.");
 
     }
 
+
+    public static void addMember() {
+        System.out.print("Enter Member ID : ");
+        String memberId = scanner.nextLine();
+        System.out.print("Enter Member Name : ");
+        String memberName = scanner.nextLine();
+        System.out.print("Enter Member Email : ");
+        String memberEmail = scanner.nextLine();
+
+        Member member = new Member(memberId, memberName, memberEmail);
+        library.addMember(member);
+        System.out.println("Member added successfully.");
+    }
 }
