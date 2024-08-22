@@ -28,6 +28,10 @@ public class Main {
                     break;
                 case 3:
                     borrowBook();
+                    break;
+                case 4:
+                    returnBook();
+                    break;
 
             }
         }
@@ -63,7 +67,6 @@ public class Main {
 
     }
 
-
     public static void addMember() {
         System.out.print("Enter Member ID : ");
         String memberId = scanner.nextLine();
@@ -77,7 +80,7 @@ public class Main {
         System.out.println("Member added successfully.");
     }
 
-    public static void borrowBook(){
+    public static void borrowBook() {
         System.out.print("Enter Member ID : ");
         String memberId = scanner.nextLine();
         System.out.print("Enter Book ID : ");
@@ -86,4 +89,15 @@ public class Main {
         library.borrowBook(memberId, bookId);
 
     }
+
+    public static void returnBook() {
+        System.out.print("Enter Member ID : ");
+        String memberId = scanner.nextLine();
+        System.out.print("Enter Book ID : ");
+        String bookId = scanner.nextLine();
+
+        library.returnBook(memberId, bookId);
+
+    }
+
 }
