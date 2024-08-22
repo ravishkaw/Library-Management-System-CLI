@@ -38,7 +38,12 @@ public class Main {
                 case 6:
                     borrowedBooks();
                     break;
-
+                case 7:
+                    listBooks();
+                    break;
+                case 8:
+                    listMembers();
+                    break;
             }
         }
 
@@ -106,17 +111,31 @@ public class Main {
 
     }
 
-    public static void availableBooks(){
+    public static void availableBooks() {
         System.out.println("Available Books:");
         for (Book book : library.availableBooks()) {
             System.out.println(book);
         }
     }
 
-    public static void borrowedBooks(){
+    public static void borrowedBooks() {
         System.out.println("Borrowed Books:");
         for (String memberBook : library.borrowedBooks().keySet()) {
             System.out.println(memberBook + library.borrowedBooks().get(memberBook));
+        }
+    }
+
+    public static void listBooks() {
+        System.out.println("Available Books:");
+        for (Book book : library.getBookList()) {
+            System.out.println(book);
+        }
+    }
+
+    public static void listMembers() {
+        System.out.println("Available Books:");
+        for (Member member : library.getMemberList()) {
+            System.out.println(member);
         }
     }
 }
