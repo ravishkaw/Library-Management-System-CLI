@@ -26,6 +26,8 @@ public class Main {
                 case 2:
                     addMember();
                     break;
+                case 3:
+                    borrowBook();
 
             }
         }
@@ -72,5 +74,15 @@ public class Main {
         Member member = new Member(memberId, memberName, memberEmail);
         library.addMember(member);
         System.out.println("Member added successfully.");
+    }
+
+    public static void borrowBook(){
+        System.out.print("Enter Member ID : ");
+        String memberId = scanner.nextLine();
+        System.out.print("Enter Book ID : ");
+        String bookId = scanner.nextLine();
+
+        library.borrowBook(memberId, bookId);
+
     }
 }
