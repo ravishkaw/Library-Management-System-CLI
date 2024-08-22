@@ -6,7 +6,7 @@ public class Book {
     private String title;
     private String author;
     private String genre;
-    private boolean isBorrowed;
+    private boolean isBorrowed = false;
 
     public Book(String bookId, String bookName, String author, String genre) {
         this.id = bookId;
@@ -42,12 +42,11 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", genre='" + genre + '\'' +
-                ", isBorrowed=" + isBorrowed +
                 '}';
     }
 
