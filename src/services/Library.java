@@ -35,6 +35,7 @@ public class Library {
             member.borrowBook(book);
             transactions.putIfAbsent(memberId, new ArrayList<>());
             transactions.get(memberId).add(bookId);
+            System.out.println("Book : " + bookId + " was borrowed by member : " + memberId);
         } else {
             System.out.println("Borrowing failed: Member or Book not found, or Book is already borrowed.");
         }
@@ -48,6 +49,7 @@ public class Library {
             book.setBorrowed(false);
             member.returnBook(book);
             transactions.get(memberId).remove(bookId);
+            System.out.println("Book : " + bookId + " was returned by member : " + memberId);
         } else {
             System.out.println("Returning failed: Member or Book not found, or Book was not borrowed by this member.");
         }
